@@ -1,0 +1,33 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.9'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	implementation group: 'org.springframework', name: 'spring-tx', version: '5.3.20'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.2'
+
+	implementation group: 'com.nimbusds', name: 'nimbus-jose-jwt', version: '9.22'
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
